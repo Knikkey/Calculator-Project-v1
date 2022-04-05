@@ -9,7 +9,7 @@
 body {
   padding: 0; /*this allows background to cover entire screen*/
   margin: 0%; /*this allows background to cover entire screen*/
-  background: linear-gradient(to right, purple, red);
+  background: linear-gradient(to right, rgb(194, 3, 194), rgb(255, 66, 141));
 }
 
 .calculator-grid {
