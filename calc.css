@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0; /*this allows background to cover entire screen*/
+  margin: 0%; /*this allows background to cover entire screen*/
+  background: linear-gradient(to right, purple, red);
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center; /*justify = horizontal axis*/
+  align-content: center; /*align = vertical axis*/
+  min-height: 100vh; /*fill 100% of the height all the time*/
+  grid-template-columns: repeat(4, 100px); /*4 columns at 100px each*/
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px); /*120px = minimum size, auto = if content gets too long, automatically adjust the size to accommodate for the content.*/
+  border: 5px solid black;
+}
+
+.calculator-grid > button {
+  /*select all buttons in .calculator-grid*/
+  cursor: pointer; /*change cursor to pointy hand over buttons*/
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button:hover {
+  /*alters when hovered*/
+  background-color: white;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1; /*start at position 1, end at position -1, which means the whole thing.*/
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
